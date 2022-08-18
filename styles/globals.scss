@@ -1,0 +1,142 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+  body {
+    color: white;
+    background: black;
+  }
+}
+
+h1 {
+  font-size: 3.5rem;
+}
+
+.navbar {
+  display: flex;
+  h3 {
+    padding: 0 10px; 
+    color: white;
+    &:hover {
+      color: green;
+      cursor: pointer;
+    }
+  }
+  background-color: rgb(130, 188, 77);
+}
+
+.hero {
+  .hero-main-text {
+    color: white;
+    text-shadow: 0 0 10px #fff603;
+    margin-bottom: 0;
+  }
+  p {
+    margin-top: 0;
+    color: white;
+  }
+  &__wrapper {
+    max-height: 44vh;
+    display: flex;
+    .right {
+      padding: 30px;
+      .swirl {
+        
+        position: relative;
+        width: 100%;
+        position: absolute;
+        height: 51.7vh;
+        top: 0px;
+        left: 201px;
+        z-index: -1;
+    }
+    .swirl img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      position: absolute;
+    }
+    }
+    
+  }
+}
+
+
+
+
+
+
+//animate softball
+.flier {
+	pointer-events: none;
+}
+
+.flier > * {
+/* Adjust animation duration to change the element’s speed */
+        animation: fly 50s linear infinite;
+        pointer-events: none !important;
+	top: 0;
+	left: 0;
+	transform: translateX(-120%) translateY(-120%) rotateZ(0);
+	position: fixed;
+	animation-delay: 1s;
+	z-index: 999999;
+}
+
+ /* Keyframe values control where the element will begin
+    and end its trajectory across the screen. Each rule
+    represents a path the element follows across the screen. */
+
+
+@keyframes fly {
+
+	98.001%, 0% {
+                display: block;
+		transform: translateX(-200%) translateY(100vh) rotateZ(0deg)
+	}
+
+	15% {
+		transform: translateX(100vw) translateY(-100%) rotateZ(180deg)
+	}
+
+	15.001%, 18% {
+		transform: translateX(100vw) translateY(-30%) rotateZ(0deg)
+	}
+
+	40% {
+		transform: translateX(-200%) translateY(3vh) rotateZ(-180deg)
+	}
+
+	40.001%, 43% {
+		transform: translateX(-200%) translateY(-100%) rotateZ(-180deg)
+	}
+
+	65% {
+		transform: translateX(100vw) translateY(50vh) rotateZ(0deg)
+	}
+
+	65.001%, 68% {
+		transform: translateX(20vw) translateY(-200%) rotateZ(180deg)
+	}
+
+	95% {
+		transform: translateX(10vw) translateY(100vh) rotateZ(0deg)
+	}
+}
