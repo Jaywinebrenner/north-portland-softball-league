@@ -1,3 +1,6 @@
+$green-dark: green;
+$green-light: rgb(130, 188, 77);
+
 html,
 body {
   padding: 0;
@@ -24,29 +27,83 @@ a {
     background: black;
   }
 }
+h1, h2, h3, h4, h5 ,h6, p, a {
+  margin: 0;
+}
 
 h1 {
   font-size: 3.5rem;
 }
 
+.content-title {
+  padding: 20px;
+}
+
+.schedule, .past-winners, .current-teams, .about {
+  background-color: rgb(130, 188, 77);
+  min-height: 50vh;
+  display: flex;
+  padding: 30px;
+  flex-direction: column;
+  align-items: center;
+  h3, h2{
+    color: white;
+    text-decoration: underline;
+  }
+  p {
+    color: white;
+  }
+  
+}
+
 .navbar {
   display: flex;
+  align-items: center;
+  height: 60px;
+  @media (max-width: 800px) {
+    justify-content: space-between;
+  }
+  .active {
+    color: $green-dark;
+  }
+  .logo {
+    margin: 0;
+    padding-left: 10px;
+    @media (max-width: 800px){
+      
+    }
+  }
+  .disabled {
+    pointer-events: none;
+  }
   h3 {
     padding: 0 10px; 
     color: white;
+    @media (max-width: 800px) {
+      font-size: 14px;
+    }
     &:hover {
-      color: green;
+      color: $green-dark;
       cursor: pointer;
     }
   }
-  background-color: rgb(130, 188, 77);
+  background-color: $green-light;
 }
 
 .hero {
+  .mascots {
+    @media (max-width: 800px){
+      display: none;
+    }
+  }
+
   .hero-main-text {
     color: white;
     text-shadow: 0 0 10px #fff603;
     margin-bottom: 0;
+    @media (max-width: 1000px){
+      font-size: 2.5rem;
+    }
   }
   p {
     margin-top: 0;
@@ -55,17 +112,22 @@ h1 {
   &__wrapper {
     max-height: 44vh;
     display: flex;
+    @media (max-width: 900px){
+
+    }
     .right {
       padding: 30px;
       .swirl {
-        
         position: relative;
         width: 100%;
         position: absolute;
-        height: 51.7vh;
+        height: 53.7vh;
         top: 0px;
         left: 201px;
         z-index: -1;
+        @media (max-width: 800px){
+          left: 0px;
+        }
     }
     .swirl img {
       height: 100%;
@@ -77,6 +139,77 @@ h1 {
     
   }
 }
+
+
+
+.schedule {
+  &__wrapper {
+
+  }
+
+  h2 {
+    margin: 0;
+    color: white;
+  }
+}
+
+.about {
+  &__wrapper {
+    text-align: center;
+    padding: 0 16vw;
+  }
+}
+
+.logo {
+  height: 50px;
+}
+
+
+.current-teams {
+  &__wrapper {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    p {
+      padding: 3px;
+    }
+  }
+}
+
+.past-winners {
+  &__wrapper {
+    display: flex;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -140,3 +273,205 @@ h1 {
 		transform: translateX(10vw) translateY(100vh) rotateZ(0deg)
 	}
 }
+
+
+
+//Cursor
+
+.cursor {
+  width: 20px;
+  height: 20px;
+  border: 1px solid white;
+  border-radius: 50%;
+  position: absolute;
+  pointer-events: none;
+  }
+  .cursor::after {
+  content: "";
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  border: 2px solid $green-dark;
+  border-radius: 50%;
+  opacity: .5;
+  top: -8px;
+  left: -8px;
+  }
+  @keyframes cursorAnim {
+  0% {
+  transform: scale(1);
+  }
+  50% {
+  transform: scale(3);
+  }
+  100% {
+  transform: scale(1);
+  opacity: 0;
+  }
+  }
+  .expand {
+  animation: cursorAnim .5s forwards;
+  }
+
+
+
+
+
+  // Animate bat
+
+  //animate softball
+.softball {
+	pointer-events: none;
+}
+
+.softball > * {
+/* Adjust animation duration to change the element’s speed */
+        animation: swing 10s linear infinite;
+        pointer-events: none !important;
+	top: 0;
+	right: 0;
+	transform: translateX(-120%) translateY(-120%) rotateZ(0);
+	position: fixed;
+	animation-delay: .1s;
+	z-index: 999999;
+}
+
+ /* Keyframe values control where the element will begin
+    and end its trajectory across the screen. Each rule
+    represents a path the element follows across the screen. */
+
+
+@keyframes fly {
+
+	98.001%, 0% {
+                display: block;
+		transform: translateX(-200%) translateY(100vh) rotateZ(0deg)
+	}
+
+	15% {
+		transform: translateX(100vw) translateY(-100%) rotateZ(180deg)
+	}
+
+	15.001%, 18% {
+		transform: translateX(100vw) translateY(-30%) rotateZ(0deg)
+	}
+
+	40% {
+		transform: translateX(-200%) translateY(3vh) rotateZ(-180deg)
+	}
+
+	40.001%, 43% {
+		transform: translateX(-200%) translateY(-100%) rotateZ(-180deg)
+	}
+
+	65% {
+		transform: translateX(100vw) translateY(50vh) rotateZ(0deg)
+	}
+
+	65.001%, 68% {
+		transform: translateX(20vw) translateY(-200%) rotateZ(180deg)
+	}
+
+	95% {
+		transform: translateX(10vw) translateY(100vh) rotateZ(0deg)
+	}
+}
+
+
+
+//animate softball
+.bat {
+	pointer-events: none;
+}
+
+.bat > * {
+/* Adjust animation duration to change the element’s speed */
+        animation: swing 50s linear infinite;
+        pointer-events: none !important;
+	top: 0;
+	left: 0;
+	transform: translateX(-120%) translateY(-120%) rotateZ(0);
+	position: fixed;
+	animation-delay: .1s;
+	z-index: 999999;
+}
+
+ /* Keyframe values control where the element will begin
+    and end its trajectory across the screen. Each rule
+    represents a path the element follows across the screen. */
+
+
+@keyframes swing {
+
+	98.001%, 0% {
+                display: block;
+		transform: translateX(-200%) translateY(100vh) rotateZ(0deg)
+	}
+
+	15% {
+		transform: translateX(100vw) translateY(-100%) rotateZ(180deg)
+	}
+
+	15.001%, 18% {
+		transform: translateX(100vw) translateY(-30%) rotateZ(0deg)
+	}
+
+	40% {
+		transform: translateX(-200%) translateY(3vh) rotateZ(-180deg)
+	}
+
+	40.001%, 43% {
+		transform: translateX(-200%) translateY(-100%) rotateZ(-180deg)
+	}
+
+	65% {
+		transform: translateX(100vw) translateY(50vh) rotateZ(0deg)
+	}
+
+	65.001%, 68% {
+		transform: translateX(20vw) translateY(-200%) rotateZ(180deg)
+	}
+
+	95% {
+		transform: translateX(10vw) translateY(100vh) rotateZ(0deg)
+	}
+}
+
+
+
+//Cursor
+
+.cursor {
+  width: 20px;
+  height: 20px;
+  border: 1px solid white;
+  border-radius: 50%;
+  position: absolute;
+  pointer-events: none;
+  }
+  .cursor::after {
+  content: "";
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  border: 2px solid $green-dark;
+  border-radius: 50%;
+  opacity: .5;
+  top: -8px;
+  left: -8px;
+  }
+  @keyframes cursorAnim {
+  0% {
+  transform: scale(1);
+  }
+  50% {
+  transform: scale(3);
+  }
+  100% {
+  transform: scale(1);
+  opacity: 0;
+  }
+  }
+  .expand {
+  animation: cursorAnim .5s forwards;
+  }

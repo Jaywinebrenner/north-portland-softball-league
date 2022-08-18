@@ -1,12 +1,20 @@
+import React, { useState } from 'react';
 
+const Navbar = ({navItems, showing, handleSetShowing}) => {
+    
+    const clickNavItem = (index) => {
+        console.log("index", index);
+        handleSetShowing(index)
+    }
 
-const Navbar = () => {
     return (
         <div className="navbar">
-            <h3>Schedule</h3>
-            <h3>About</h3>
-            <h3>Current Teams</h3>
-            <h3>Past Winners</h3>
+            <img className='logo' src="/logo.png"/>
+            {navItems.map((item, i) => {
+                return (
+                    <h3 onClick={()=> clickNavItem(i)} className={`${showing === item.id ? "active disabled" : ""}`}>{item.name}</h3>
+                )
+            })}
         </div>
     )
 }
