@@ -51,8 +51,8 @@ export default function Home() {
         {showing === 3 && <PastWinners/> }
  
 
-      <div class="flier"><img src="softball.png" width="200"/></div>
-      <div class="bat"><img src="bat.png" width="300"/></div>
+      <div className="flier"><img src="softball.png" width="200"/></div>
+      <div className="bat"><img src="bat.png" width="300"/></div>
     </div>
   )
 }
