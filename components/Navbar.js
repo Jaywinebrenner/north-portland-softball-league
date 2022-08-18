@@ -12,7 +12,7 @@ const Navbar = ({navItems, showing, handleSetShowing}) => {
             <img className='logo' src="/logo.png"/>
             {navItems.map((item, i) => {
                 return (
-                    <h3 onClick={()=> clickNavItem(i)} className={`${showing === item.id ? "active disabled" : ""}`}>{item.name}</h3>
+                    <h3 key={`nav links${i}`} onClick={()=> clickNavItem(i)} className={`${showing === item.id ? "active disabled" : ""}`}>{item.name}</h3>
                 )
             })}
         </div>
