@@ -39,7 +39,7 @@ h1 {
   padding: 20px;
 }
 
-.schedule, .past-winners, .current-teams, .about {
+.schedule, .past-winners, .current-teams, .about, .login-page, .weekly-results, .standings {
   background-color: rgb(130, 188, 77);
   min-height: 50vh;
   display: flex;
@@ -55,11 +55,65 @@ h1 {
   }
   
 }
+.ReactModal__Content--after-open {
+  padding: 0!important;
+  width: 65vw!important;
+  height: 50vw!important;
+
+}
+.modal-inside-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background-image: url("/gold.svg");
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -2;
+  .trophy {
+    position: absolute;
+    z-index: -1;
+    top: 40px;
+    height: 50%;
+    right: 5px;
+  }
+  h2 {
+    margin-bottom: 24px;
+  }
+  .x-wrapper {
+    cursor: pointer;;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}
+.gear-wrapper {
+  width: 22px;
+  position: absolute;
+  right: 20px;
+  cursor: pointer;
+}
+
+.btn {
+  max-width: 50%;
+  border: 1px black solid;
+  border-radius: 5px;
+  background-color: $green-light;
+  color: white;
+  padding: 5px 20px;
+  cursor: pointer;
+  &:hover {
+    opacity: .5;
+  }
+}
 
 .navbar {
   display: flex;
   align-items: center;
   height: 60px;
+  position: relative;
   @media (max-width: 800px) {
     justify-content: space-between;
   }
@@ -73,6 +127,11 @@ h1 {
       
     }
   }
+
+  .show-secret {
+    display: inline-block!important;
+  }
+
   .disabled {
     pointer-events: none;
   }
@@ -179,11 +238,105 @@ h1 {
 .past-winners {
   &__wrapper {
     display: flex;
+    .winner {
+      columns: 2 auto;
+
+    }
+  }
+}
+
+.weekly-results {
+  min-height: 105vh;
+  h1,h2,h3,h4,h5,h5,p {
+    color: black;
+  }
+  .weekly-results-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    &__week {
+      min-width: 250px;
+      margin: 25px;
+      padding: 25px;
+      border: 3px solid $green-dark;
+      background-color: white;
+      border-radius: 5px;
+      .date {
+        margin-bottom: 24px;
+      }
+      .game {
+        margin: 12px 0;
+      }
+    }
   }
 }
 
 
 
+
+.standings {
+  h2 {
+    margin-bottom: 24px;
+  }
+  
+.table {
+	width:100%;
+	border:5px solid $green-dark;
+}
+
+.table-header {
+	display:flex;
+	width:75vw;
+	background:$green-dark;
+	padding:20px 0;
+}
+
+.table-row {
+	display:flex;
+	width:75vw;
+	padding: 20px 0;
+	
+	&:nth-of-type(odd) {
+		background:white;
+	}
+}
+
+.table-data, .header__item {
+	flex: 1 1 20%;
+	text-align:center;
+}
+
+.header__item {
+	text-transform:uppercase;
+}
+
+.filter__link {
+	color:white;
+	text-decoration: none;
+	position:relative;
+	display:inline-block;
+	padding-left: 30px;
+	padding-right: 30px;
+	
+	&::after {
+		content:'';
+		position:absolute;
+		right:-15px;
+		color:white;
+		font-size:20px;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+	
+	&.desc::after {
+		content: '(desc)';
+	}
+
+	&.asc::after {
+		content: '(asc)';
+	}
+	
+}
+}
 
 
 

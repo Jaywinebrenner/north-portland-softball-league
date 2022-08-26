@@ -1,11 +1,11 @@
 
 
-const Schedule = () => {
+const Schedule = ({props}) => {
     return (
         <div className="schedule">
-            <h2 className='content-title'>2023 NPSL Schedule</h2>
+            <h2 className='content-title'>{props[0].acf.schedule_title}</h2>
             <div className="schedule__wrapper">
-                <p>TBD</p>
+            <div dangerouslySetInnerHTML={{ __html: props[0].acf.schedule_content}}/>
             </div>
         </div>
     )

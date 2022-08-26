@@ -1,18 +1,17 @@
 import React, { useState } from 'react';
 
-const CurrentTeams = () => {
-    
+const CurrentTeams = ({props}) => {
+    // console.log("props on Current", props)
 
     return (
         <div className="current-teams">
-            <h2 className='content-title'>Current Teams</h2>
+            <h2 className='content-title'>Teams</h2>
             <div className='current-teams__wrapper'>
-                <p>UpNorth</p>
-                <p>&#xbf;Por Que No?</p>
-                <p>Turn Turn Turn</p>
-                <p>Stormbreaker</p>
-                <p>Tulip Shop</p>
-                <p>Fresh Pot</p>
+               { props[0].acf.current_team.map((team) => {
+                return (
+                    <p>{team.team}</p>
+                )
+               })}
             </div>
 
         </div>
