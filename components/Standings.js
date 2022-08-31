@@ -18,9 +18,9 @@ const Standings = ({props}) => {
 			<div className="header__item"><a id="total" className="filter__link filter__link--number" href="#">RA</a></div>
 		</div>
 		<div className="table-content">	
-			{props[0].acf.team.map((team) => {
+			{props[0].acf.team.map((team, i) => {
 				return (
-					<div className="table-row">		
+					<div key={`standings-key=${i}`} className="table-row">		
 						<div className="table-data">{team.name}</div>
 						<div className="table-data">{team.wins}</div>
 						<div className="table-data">{team.losses}</div>

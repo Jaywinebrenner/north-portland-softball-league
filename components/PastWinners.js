@@ -9,9 +9,9 @@ const PastWinners = ({props}) => {
             <h2 className='content-title'>Champs</h2>
             <div className='past-winners__wrapper'>
                 <div className='winner'>
-                { [...props[0].acf.past_winner].reverse().map((item) => {
+                { [...props[0].acf.past_winner].reverse().map((item, i) => {
                     return (
-                    <p><strong>{item.year}</strong> {item.team}</p> 
+                    <p key={`past-key=${i}`}><strong>{item.year}</strong> {item.team}</p> 
                     )
                 })}
                 </div>

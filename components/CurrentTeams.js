@@ -7,9 +7,9 @@ const CurrentTeams = ({props}) => {
         <div className="current-teams">
             <h2 className='content-title'>Teams</h2>
             <div className='current-teams__wrapper'>
-               { props[0].acf.current_team.map((team) => {
+               { props[0].acf.current_team.map((team, i) => {
                 return (
-                    <p>{team.team}</p>
+                    <p key={`current-key=${i}`}>{team.team}</p>
                 )
                })}
             </div>

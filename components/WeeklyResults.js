@@ -8,15 +8,15 @@ const WeeklyResults = ({props}) => {
         <div className="weekly-results">
             <h2>Weekly Results Page</h2>
             <div className="weekly-results-wrapper">
-            {[...props[0].acf.weekly_result].reverse().map((week) => {
+            {[...props[0].acf.weekly_result].reverse().map((week, i) => {
               
                 return (
-                    <div className="weekly-results-wrapper__week">
+                    <div key={`weekly-key=${i}`} className="weekly-results-wrapper__week">
                     <h4 className='date'>{`Week of ${week.date}`}</h4>
-                    {week.scores.map((x)=> {
+                    {week.scores.map((x, i)=> {
                           console.log("x", x)
                         return (
-                            <div className='game'>
+                            <div key={`score-key=${i}`} className='game'>
                                 <p>{x.team_one} - <strong>{x.team_one_score} </strong></p>
                                 <p>{x.team_two} - <strong>{x.team_two_score}</strong></p>
                             </div>
