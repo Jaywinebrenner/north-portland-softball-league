@@ -11,6 +11,14 @@ const About = ({props}) => {
                 <p>Jason Urick: urickorama@gmail.com </p>
                 <p>Maryam Troncelliti: maryamtroncelliti@gmail.com </p> */}
                     <div dangerouslySetInnerHTML={{ __html: props[0].acf.content}}/>
+                    <div className='about__wrapper-teams'>
+                        <h3>Current Teams</h3>
+                            { props[0].acf.current_team.map((team) => {
+                        return (
+                            <p>{team.team}</p>
+                        )
+                    })}
+                    </div>
             </div>
         </div>
     )
