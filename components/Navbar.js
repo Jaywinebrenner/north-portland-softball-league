@@ -101,9 +101,9 @@ const Navbar = ({navItems, showing, handleSetShowing, props}) => {
             <h1>Champs</h1>
             <img className='trophy' src="/trophy.png"/>
             <div className='winner glow'>
-                { [...props[0].acf.past_winner].reverse().map((item) => {
+                { [...props[0].acf.past_winner].reverse().map((item, i) => {
                     return (
-                    <h5><strong>{item.year}</strong> {item.team}</h5> 
+                    <h5 key={`winner-key=${i}`}><strong>{item.year}</strong> {item.team}</h5> 
                     )
                 })}
                 </div>
