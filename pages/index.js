@@ -5,10 +5,7 @@ import Hero from '../components/Hero'
 import Schedule from '../components/Schedule'
 import About from '../components/About'
 import WeeklyResults from '../components/WeeklyResults'
-import CurrentTeams from '../components/CurrentTeams'
 import Standings from '../components/Standings'
-import CustomCursor from '../components/CustomCursor'
-import AnimatedCursor from "react-animated-cursor"
 
 export default function Home({props }) {
 

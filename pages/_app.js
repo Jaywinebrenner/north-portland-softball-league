@@ -3,9 +3,6 @@ import { useEffect } from 'react';
 import { SessionProvider } from "next-auth/react"
 import { emojiCursor } from 'cursor-effects';
 
-
-
-
 export default function App({
   Component,
   pageProps: { session, ...pageProps },

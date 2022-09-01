@@ -2,8 +2,6 @@ import React, {useState, useEffect} from 'react';
 import Modal from 'react-modal';
 import { faXmark, faTrophy } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { signIn, signOut, useSession } from 'next-auth/react'
-import Link from 'next/link'
 import Hamburger from 'hamburger-react'
 
 const customStyles = {
