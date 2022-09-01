@@ -10,7 +10,7 @@ import Standings from '../components/Standings'
 import CustomCursor from '../components/CustomCursor'
 import AnimatedCursor from "react-animated-cursor"
 
-export default function Home({props}) {
+export default function Home({props }) {
 
   const [showing, setShowing] = useState(0);
 
@@ -65,13 +65,14 @@ export default function Home({props}) {
 
 export async function getServerSideProps() {
 
-  const res = await fetch(`http://localhost:8888/north-portland-softball-league-backend/wp-json/wp/v2/pages`);
-  
+  // const res = await fetch(`http://localhost:8888/north-portland-softball-league-backend/wp-json/wp/v2/pages`);
+  const res = await fetch(`https://northportlandsoftballleague.jaywinebrenner.com/wp-json/wp/v2/pages`);
+
   let props = await res.json();
 
   return {
     props: {
-      props
+      props,
     },
   };
 }

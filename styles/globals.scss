@@ -348,7 +348,6 @@ p {
 }
 
 .weekly-results {
-  min-height: 105vh;
   text-align: center;
   justify-content: center;
   h1, h2 {
@@ -360,6 +359,7 @@ p {
   .weekly-results-wrapper {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     &__week {
       min-width: 250px;
       margin: 25px;
